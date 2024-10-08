@@ -1,7 +1,7 @@
-// App.js
 import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
+import "./App.css"; // Importa o CSS aqui
 
 const Login = ({ onLogin }) => {
   const [ra, setRA] = useState("");
@@ -11,12 +11,12 @@ const Login = ({ onLogin }) => {
     if (ra === senha && ra !== "") {
       onLogin(ra);
     } else {
-      alert("Usuário ou senha incorretos. Use o RA como usuário e senha.");
+      alert("Use o RA como usuário e senha.");
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <input
         type="text"
@@ -40,8 +40,8 @@ const Marvel = () => {
   const [info, setInfo] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const publicKey = '9ff52830df275cefa343a732a7a1c910';
-  const privateKey = '4cbe8c95a2c7b27e485f903a890ec8270f9932c4';
+  const publicKey = 'ba63388ce343d9a673325344cd77ac22';
+  const privateKey = '2b37f8d71658e6bcaf622ded2a0bc990a06755bd';
   const ts = Date.now();
   const hash = md5(ts + privateKey + publicKey);
 
@@ -66,7 +66,7 @@ const Marvel = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Marvel Character Search</h2>
       <input
         type="text"
